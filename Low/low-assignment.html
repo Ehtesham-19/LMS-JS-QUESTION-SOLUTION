@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("hello world");
+
+      function sum(a, b) {
+        return a + b;
+      }
+      console.log(sum(7, 5));
+      function even() {
+        let n = prompt("enetr number");
+        if (n % 2 == 0) {
+          console.log("number is even");
+        } else {
+          console.log("number is odd");
+        }
+      }
+      even();
+
+      let arr = [2, 5, 45, 78, 44, 85];
+      let large = [0];
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > large) {
+          large = arr[i];
+        }
+      }
+      console.log(large);
+
+      function reverse(str) {
+        return str.split("").reverse().join("");
+      }
+      let word = "hello";
+      let n = reverse(word);
+      console.log(n);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // sort array by insertion sort
+      function insertion_sort(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          let j = i - 1;
+          let temp = arr[i];
+          while (j >= 0 && arr[j] > temp) {
+            arr[j + 1] = arr[j];
+            j--;
+          }
+          arr[j + 1] = temp;
+        }
+        return arr;
+      }
+      console.log(insertion_sort([1, 22, 55, 88, 3, 4, 5, 66, 12, 8, 0, 9]));
+
+      // find total vowels in string
+      function vowels(str) {
+        let count = 0;
+        let lower = str.toLowerCase();
+        let vowels = "aeiou";
+        for (let i = 0; i < lower.length; i++) {
+          if (vowels.includes(lower[i])) {
+            count++;
+          }
+        }
+        return count;
+      }
+      console.log(vowels("my name is ehtesham"));
+
+      // check the string is valid email or not
+      function isvalidemail(email) {
+        return email.includes("@") && email.includes(".");
+      }
+      console.log(isvalidemail("shami.@gmail.com"));
+      // find second largest in array
+      function secondlargest(arr) {
+        arr.sort((a, b) => b - a);
+        return arr[1];
+      }
+      console.log(secondlargest([5, 9, 78, 5, 15, 35]));
+
+      // using quick sort to sort an array
+      function quicksort(arr) {
+        if (arr.length <= 1) {
+          return arr;
+        }
+        let pivot = arr[arr.length - 1];
+        let left = [];
+        let right = [];
+        for (let i = 0; i < arr.length - 1; i++) {
+          if (arr[i] < pivot) {
+            left.push(arr[i]);
+          } else {
+            right.push(arr[i]);
+          }
+        }
+        return [...quicksort(left), pivot, ...quicksort(right)];
+      }
+      console.log(quicksort([-5, 55, 8, 9, 12, 25]));
+    </script>
+  </body>
+</html>

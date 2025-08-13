@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // area of circle
+      function areaofcircle(r) {
+        let Area = 3.14159 * r * r;
+        return Area;
+      }
+      console.log(areaofcircle(5));
+      // second smallest element in array
+      function smallestelement(arr) {
+        arr.sort((a, b) => a - b);
+        return arr[1];
+      }
+      console.log(smallestelement([1, 55, 88, 99, 4, 5, 10, 3]));
+      // check the strings are argamns or not..
+      function check(str1, str2) {
+        let n1 = str1.length;
+        let n2 = str2.length;
+        if (n1 != n2) {
+          return false;
+        } else {
+          return true;
+        }
+        str1.sort;
+        str2.sort;
+        for (let i = 0; i < n1; i++) {
+          if (str1[i] != str2[i]) {
+            console.log("these are not arganms");
+          } else {
+            console.log("thse are arganms");
+          }
+        }
+      }
+      console.log(check("mars", "arms"));
+      // intersection of array
+      function intersection(array1, array2) {
+        let newarray = [];
+        for (let i = 0; i < array1.length; i++) {
+          for (let j = 0; j < array2.length; j++) {
+            if (array1[i] === array2[j]) {
+              newarray.push(array1[i]);
+            }
+          }
+        }
+        return newarray;
+      }
+      console.log(intersection([1, 2, 3, 4, 5], [2, 4, 7, 8, 3]));
+      // avaerage of an array
+      function avaerage(number) {
+        let sum = 0;
+        for (let i = 0; i < number.length; i++) {
+          sum += number[i];
+        }
+        return sum / number.length;
+      }
+      console.log(avaerage([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+    </script>
+  </body>
+</html>

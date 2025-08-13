@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Capitalize Names
+      function Capitalize(name) {
+        let Capitalize = [];
+        for (let i = 0; i < name.length; i++) {
+          let Names = name[i];
+          Capitalize.push(
+            Names.charAt(0).toUpperCase() + Names.slice(1).toLowerCase()
+          );
+        }
+        return Capitalize;
+      }
+      console.log(Capitalize(["sam", "john", "saira"]));
+    </script>
+  </body>
+</html>

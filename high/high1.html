@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  Fibonacci sequence
+      function Fibonaccisequence(n) {
+        let n1 = 0,
+          n2 = 1,
+          next;
+        for (let i = 1; i <= n; i++) {
+          console.log(n1);
+          next = n1 + n2;
+          n1 = n2;
+          n2 = next;
+        }
+      }
+      console.log(Fibonaccisequence(5));
+
+      // factorial by recursive
+      function factorial(n) {
+        if (n === 0) {
+          return 1;
+        }
+        if (n < 1) {
+          return "factorial is not for negative number";
+        } else {
+          return n * factorial(n - 1);
+        }
+      }
+      console.log(factorial(5));
+      // string to title case
+      function titlecase(s) {
+        return s
+          .toLowerCase()
+          .split(" ")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+      }
+      console.log(titlecase("this is my first time"));
+
+      // no repeating character in string
+      function repeatingchar(s) {
+        for (let i = 0; i < s.length; i++) {
+          let char = s[i];
+          if (s.indexOf(char) === s.lastIndexOf(char)) {
+            return char;
+          }
+        }
+        return null;
+      }
+      console.log(repeatingchar("ehtesham"));
+      // return the prefix
+      function prefix(arr) {
+        if (!arr.length) return "";
+        let prefix = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+          while (arr[i].indexOf(prefix) !== 0) {
+            prefix = prefix.slice(0, prefix.length - 1);
+            if (!prefix) return "";
+          }
+        }
+        return prefix;
+      }
+      console.log(prefix(["dishonest", "dislike", "disloyal"]));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // string to object
+      let str = '{"name":"ehtesham","age":"23","status":"single"}';
+      let obj = JSON.parse(str);
+      console.log(obj.name);
+      // object to string
+      let object = {
+        name: "ehtesham",
+        age: 23,
+        status: "single",
+      };
+      let string = JSON.stringify(object);
+      console.log(string);
+      // flter the json array
+      function filterArray(data, filter) {
+        return data.filter((person) => person.age >= filter);
+      }
+      let data = [
+        {
+          name: "alice",
+          age: 20,
+        },
+        {
+          name: "sam",
+          age: 35,
+        },
+        {
+          name: "burno",
+          age: 31,
+        },
+      ];
+      console.log(filterArray(data, 25));
+      // json array modify
+      function increment(people, inc) {
+        return people.map((person) => {
+          return {
+            ...person,
+            age: person.age + inc,
+          };
+        });
+      }
+
+      let people = [
+        { name: "Alice", age: 25 },
+        { name: "Bob", age: 17 },
+        { name: "Charlie", age: 30 },
+      ];
+      console.log(increment(people, 2));
+    </script>
+  </body>
+</html>

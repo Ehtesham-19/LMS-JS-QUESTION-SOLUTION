@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // find prime number upto given number
+      function primenumber(limit) {
+        let prime = [];
+        for (let num = 2; num <= limit; num++) {
+          let isprime = true;
+          for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+              isprime = false;
+              break;
+            }
+          }
+          if (isprime) prime.push(num);
+        }
+        return prime;
+      }
+      console.log(primenumber(10));
+
+      // shuffle array randomly
+      function shufflerandomly(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      }
+      console.log(shufflerandomly([2, 4, 8, 9, 1, 0]));
+
+      // to check the Palindrome
+      function Palindrome(str) {
+        let j = str.length - 1;
+        for (let i = 0; i < str.length / 2; i++) {
+          if (str[i] != str[j]) {
+            return false;
+          }
+          j--;
+        }
+        return true;
+      }
+      console.log(Palindrome("panama"));
+      // find max common element
+      function maxelements(arr1, arr2) {
+        let element = [];
+        for (let i = 0; i < arr1.length; i++) {
+          let ele = arr1[i];
+          if (arr2.includes(ele) && !element.includes(ele)) {
+            element.push(ele);
+          }
+        }
+        return Math.max(...element);
+      }
+      console.log(maxelements([2, 5, 8, 7, 9], [5, 8, 11, 66, 9]));
+    </script>
+  </body>
+</html>

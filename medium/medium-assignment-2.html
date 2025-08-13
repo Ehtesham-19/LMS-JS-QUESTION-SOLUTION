@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // truncate a string
+      function truncate(str, length) {
+        if (str.length > length) {
+          return str.slice(0, length - 3) + ".....";
+        }
+        return str;
+      }
+      console.log(truncate("this is the world full of enemies", 10));
+      // sort array of object by specific property
+      let obj = [
+        {
+          name: "sam",
+          age: 22,
+        },
+        {
+          name: "tom",
+          age: 25,
+        },
+        {
+          name: "cruse",
+          age: 33,
+        },
+      ];
+      let compare = (a, b) => {
+        if (a.age < b.age) {
+          return -1;
+        }
+        if (a.age > b.age) {
+          return 1;
+        }
+      };
+      obj.sort(compare);
+      console.log(obj);
+      // sum of dgit
+      function sumofdigit(num) {
+        let str = num.toString();
+        let sum = 0;
+        for (let digit of str) {
+          sum += parseInt(digit);
+        }
+        return sum;
+      }
+      console.log(sumofdigit(12345678910045));
+      // function random password
+      function password(n) {
+        let pass = " ";
+        for (let i = 0; i < n; i++) {
+          let d = Math.floor(Math.random() * 200);
+          if (d >= 33 && d <= 123) {
+            pass += String.fromCharCode(d);
+          } else {
+            pass += d % 10;
+          }
+        }
+        return pass;
+      }
+
+      console.log(password(6));
+      // largest word in string
+      function largest(str) {
+        str = str.match(/[a-zA-Z0-9]+/gi);
+        let largest = "";
+        for (let i = 0; i < str.length; i++) {
+          if (str[i].length > largest.length) {
+            largest = str[i];
+          }
+        }
+        return largest;
+      }
+      console.log(largest("this world is full of enemies"));
+    </script>
+  </body>
+</html>

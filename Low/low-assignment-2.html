@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // occurence of a speciic elemnt
+      function occurence(array, value) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === value) {
+            count++;
+          }
+        }
+        return count;
+      }
+      let n = occurence([2, 2, 5, 4, 88, 77, 2, 2, 5, 2], 2);
+      console.log(n);
+      // palindrome.
+      function palindrome(str) {
+        let rev = str.split("").reverse().join("");
+        if (rev == str) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(palindrome("car"));
+      // remove duplicate array
+      let newarr=[1,2,2,2,5,5,8,9,7,4,6,3,4,0];
+      let uniquie=[];
+      for(let i=0;i<newarr.length;i++){
+if(!uniquie.includes(newarr[i])){
+uniquie.push(newarr[i])
+}
+      }
+      console.log(uniquie);
+      // check prime number
+function prime(num){
+    if(num==0||num<0){
+console.log("number must be positive or greater then 1")
+    }
+    for(let i=2;i<=num/2;i++){
+if(num%i==0){
+console.log(num+ " is not a prime number");
+return
+}
+    }
+    console.log(num+" is prime number")
+}
+prime(19);
+
+    </script>
+  </body>
+</html

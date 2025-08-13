@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // divisible by 3 and 5;
+      function divisible(num) {
+        let sum = 0;
+        for (let i = 1; i <= num; i++) {
+          if (i % 3 == 0 || i % 5 == 0) {
+            sum += i;
+          }
+        }
+        return sum;
+      }
+      let sum = divisible(5);
+      console.log(sum);
+      // celcius to farenhite formula
+      function temp(c) {
+        let f = (c * 9) / 5 + 32;
+        console.log(f);
+      }
+      temp(55);
+      // check the substring in the string
+      function check(string, substring) {
+        return string.includes(substring);
+      }
+      console.log(check("this is a new coding site", "site"));
+
+      // area of triangle
+      function areaoftriangle(base, height) {
+        let area = (1 / 2) * base * height;
+        return area;
+      }
+      console.log(areaoftriangle(10, 10));
+      // generate number between range
+      function range(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        let random = Math.floor(Math.random() * (max - min + 1)) + min;
+        return random;
+      }
+
+      console.log(range(5, 50));
+    </script>
+  </body>
+</html>

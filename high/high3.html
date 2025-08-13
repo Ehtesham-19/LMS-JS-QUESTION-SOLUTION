@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // longest common subsequence
+      function longest_subsequence(str1, str2) {
+        str1 = str1.split("");
+        str2 = str2.split("");
+        let result = [];
+        let j = 0;
+
+        for (let i = 0; i < str1.length; i++) {
+          for (; j < str2.length; j++) {
+            if (str2[j] === str1[i]) {
+              result.push(str2[j]);
+              j++;
+              break;
+            }
+          }
+        }
+
+        return result.join("");
+      }
+
+      console.log(longest_subsequence("AGTAB", "GXTXABC"));
+      // print fibonacci series
+      function fibonacci(n) {
+        let sequence = [];
+        let a = 0,
+          b = 1;
+        for (let i = 0; i < n; i++) {
+          sequence.push(a);
+          let next = a + b;
+          a = b;
+          b = next;
+        }
+        return sequence;
+      }
+      console.log(fibonacci(5));
+      // print reversed Array
+      function reversed(arr) {
+        let reversed = [];
+        for (let i = arr.length - 1; i >= 0; i--) {
+          reversed.push(arr[i]);
+        }
+        return reversed;
+      }
+      console.log(reversed([1, 2, 3, 4, 5]));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // capitlized
+      function capital(str) {
+        let capitalzed = str
+          .split(" ")
+          .map((word) => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+          })
+          .join(" ");
+        return capitalzed;
+      }
+      console.log(capital("hello world"));
+      // index of first occurence
+      function indexoffirst(array, element) {
+        let index = array.indexOf(element);
+        return index;
+      }
+      console.log(indexoffirst([2, 1, 1, 4, 5, 8, 8, 8, 8, 8, 8, 5, 5], 5));
+      // leap year
+      function leap(year) {
+        if (year % 4 == 0 && year % 100 != 0) {
+          console.log(year + " is a leap year");
+        } else {
+          console.log(year + " is not a leap year");
+        }
+      }
+      leap(1900);
+
+      // sum of squares
+      function sumofsquares(n) {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+          sum += i * i;
+        }
+        return sum;
+      }
+      console.log(sumofsquares(3));
+      // mrge two sorted array
+      function merge(array1, array2) {
+        let newarray = [];
+        let i=0, j=0;
+        while (i < array1.length && j < array2.length) {
+          if (array1[i] < array2[j]) {
+            newarray.push(array1[i]);
+            i++;
+          } else {
+            newarray.push(array2[j]);
+            j++;
+          }
+        }
+        while (i < array1.length) {
+          newarray.push(array1[i]);
+          i++;
+        }
+        while (j < array2.length) {
+          newarray.push(array2[j]);
+          j++;
+        }
+        return newarray;
+      }
+      const array1 = [1, 3, 5, 7];
+      const array2 = [2, 4, 6, 8];
+
+      console.log(merge(array1, array2));
+    </script>
+  </body>
+</html>
