@@ -8,4 +8,4 @@ function greet(hour) {
     }
     
 }
-greet(21)
+greet(21);
