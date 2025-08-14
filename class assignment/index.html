@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class person {
+        constructor(name, age, height, hair, weight) {
+          this.name = name;
+          this.age = age;
+          this.height = height;
+          this.hair = hair;
+          this.weight = weight;
+        }
+        getname() {
+          return this.name;
+        }
+        Age() {
+          return { age: this.age, height: this.height };
+        }
+        updateage(newage) {
+          if (newage === undefined) {
+            throw new Error("new age is required to update");
+          }
+          this.age = newage;
+        }
+        isdead(status) {
+          if (typeof status !== "boolean") {
+            throw new Error("is dead must be a beelan value");
+          }
+          this.isdead = status;
+        }
+      }
+      let person1 = new person("sam", 25, 5.6, "brown", 62);
+      console.log(person1);
+      console.log(person1.getname());
+      person1.updateage(28);
+      console.log(person1.age);
+      person1.isdead(true);
+      console.log(person1.isdead);
+    </script>
+  </body>
+</html>
