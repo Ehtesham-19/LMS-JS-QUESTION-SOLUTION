@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isPrime(num) {
+        if (num <= 1) return false;
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      console.log(isPrime(10));
+      // prime number
+      function isEven(num) {
+        return num % 2 === 0;
+      }
+
+      console.log(isEven(4));
+      // factorial
+      function factorial(n) {
+        let result = 1;
+        for (let i = 1; i < n.length; i++) {
+          result *= i;
+        }
+        return result;
+      }
+      console.log(factorial(6));
+
+      function isPerfectSquare(num) {
+        if (num < 0) return false; // Negative numbers can't be perfect squares
+        let sqrt = Math.sqrt(num);
+        return Number.isInteger(sqrt);
+      }
+
+      // Example usage
+      console.log(isPerfectSquare(25)); // true (5 × 5)
+      function getLarger(a, b) {
+        return a > b ? a : b;
+      }
+
+      // Example usage
+      console.log(getLarger(5, 10)); // 10
+      let name = prompt("Enter your name:");
+      console.log(`Hello, ${name}!`);
+    </script>
+  </body>
+</html>
