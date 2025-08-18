@@ -1,0 +1,120 @@
+Great question 👍 Let’s break down **Strict Mode in JavaScript** in detail:
+
+---
+
+## 1. What is Strict Mode?
+
+**Strict Mode** is a feature introduced in **ECMAScript 5 (ES5)** that makes JavaScript code execution stricter and safer.
+It helps catch **common coding mistakes** and **"unsafe" actions** that JavaScript usually allows.
+
+👉 In short: it prevents silent errors, making debugging and code quality better.
+
+---
+
+## 2. Writing Style (How to Enable Strict Mode)
+
+Strict mode is enabled using the directive:
+
+```javascript
+"use strict";
+```
+
+* It must be written as a **string** (not a keyword).
+* It can be applied at **global scope** or **function scope**.
+
+### Example – Global Strict Mode:
+
+```javascript
+"use strict";
+x = 10; // ❌ Error: x is not defined
+```
+
+### Example – Function Strict Mode:
+
+```javascript
+function test() {
+  "use strict";
+  y = 20; // ❌ Error: y is not defined
+}
+test();
+```
+
+---
+
+## 3. Where Do We Write Strict Mode?
+
+* At the **top of a JavaScript file** → Applies to the whole script.
+* At the **top of a function** → Applies only inside that function.
+
+⚠️ Important: If not written at the **top**, it will be ignored.
+
+---
+
+## 4. Uses and Benefits of Strict Mode
+
+1. **Avoids undeclared variables**
+   Without strict mode, writing `x = 5;` creates a global variable silently. Strict mode throws an error.
+
+2. **Avoids duplicate parameters**
+   In normal JS, you can write `function f(a, a) {}`, which is confusing. Strict mode disallows this.
+
+3. **Eliminates silent errors**
+   Some bad practices like assigning values to read-only properties throw clear errors in strict mode.
+
+4. **Prepares code for future JavaScript versions**
+   Helps developers avoid using keywords reserved for future versions (`let`, `class`, etc.).
+
+5. **Improves security**
+   Prevents the use of dangerous features like `with` statement.
+
+---
+
+## 5. Examples Where Strict Mode is Necessary
+
+### Example 1 – Prevents Undeclared Variables
+
+```javascript
+"use strict";
+x = 100;  // ❌ Error: x is not defined
+```
+
+Without strict mode → creates global variable unintentionally.
+With strict mode → error is thrown → safer code.
+
+---
+
+### Example 2 – Prevents Duplicate Parameters
+
+```javascript
+"use strict";
+function add(a, a) {  // ❌ Error: Duplicate parameter name
+  return a + a;
+}
+```
+
+Without strict mode → allowed but confusing.
+With strict mode → forces clarity in function design.
+
+---
+
+### Example 3 – Protects Read-only Properties
+
+```javascript
+"use strict";
+const obj = {};
+Object.defineProperty(obj, "id", { value: 1, writable: false });
+
+obj.id = 10;  // ❌ Error: Cannot assign to read only property 'id'
+```
+
+Without strict mode → assignment fails silently.
+With strict mode → throws error → easier debugging.
+
+---
+
+✅ **Summary:**
+Strict mode enforces **cleaner, safer, and more maintainable code**, which is why it's widely used in production JavaScript projects.
+
+---
+
+Would you like me to **create a PDF with explanation + code examples** for strict mode (like the previous ones), so you can keep it in your study notes?
